@@ -25,7 +25,9 @@
         <td><%= song.released ? "Yes" : "No" %></td>
         <td><%= song.release_year %></td>
         <td><%= song.id %></td>
+        <td><%= link_to "View", song_path(song) %></td>
         <td><%= link_to "Edit", edit_song_path(song) %></td>
+        <td><%= link_to "Delete", song, method: :delete, data: {confirm: 'Really delete?' } %></td>
     </tr>
 <% end %>
 </tbody>
