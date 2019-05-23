@@ -1,0 +1,30 @@
+<h1>Songs#index</h1>
+<p>Find me in app/views/songs/index.html.erb</p>
+
+
+<h1>View all Songs</h1>
+<%= link_to 'Create Song', new_song_path %>
+<br>
+<table>
+    <thead> 
+        <tr>
+            <td>Artist Name</td>
+            <td>Title</td>
+             <td>Genre</td>
+            <td>Released?</td>
+            <td>Year Released?</td>
+        </tr>
+    </thead>
+    <tbody>        
+<% @songs.each do |song| %>
+    <tr>
+        <td><%= song.artist_name %></td>
+        <td><%= song.title %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.released ? "Yes" : "No" %></td>
+        <td><%= song.release_year %></td>
+    </tr>
+<% end %>
+</tbody>
+<%# ? <p>Released</p> : <p>Unreleased</p> %>
+</table>

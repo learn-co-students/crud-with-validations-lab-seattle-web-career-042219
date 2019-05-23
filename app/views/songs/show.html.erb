@@ -1,0 +1,9 @@
+<h1>Songs#show</h1>
+<p>Find me in app/views/songs/show.html.erb</p>
+<h1>View a Song</h1>
+<h3><%= @song.title %> by <%= @song.artist_name %></h3>
+<p>genre: <%= @song.genre %></p>
+<% if @song.released %>
+    <p>Released in the year <%=@song.release_year %></p>
+<% end %>
+<%= link_to "Edit", edit_song_path(@song) %>
