@@ -1,0 +1,11 @@
+<h3>Songs</h3>
+<tbody>
+  <% @songs.each do |song| %>
+    <tr><%= song.title %></tr>
+    <tr><%= song.artist_name %></tr>
+
+    <%= link_to :edit,  edit_song_path(song) %><br>
+    <%= form_tag song_path(song.id), method: "delete" %>
+    <%= submit_tag "Delete" %><br>
+  <% end %>
+</tbody>
