@@ -1,3 +1,5 @@
+require 'pry'
+
 class SongsController < ApplicationController
   def index
     @songs = Song.all
@@ -27,10 +29,10 @@ class SongsController < ApplicationController
   end
 
   def update
-    @song = Song.new(song_params)
-    if @song.valid?
-      @song = Song.find(params[:id])
-      @song.update(song_params)
+    @song = Song.find(params[:id])
+    @song.update(song_params)
+    #binding.pry
+    if @song.save
       redirect_to song_path(@song)
     else
       render :edit
@@ -38,6 +40,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    #binding.pry
     @song = Song.find(params[:id])
     @song.destroy
 

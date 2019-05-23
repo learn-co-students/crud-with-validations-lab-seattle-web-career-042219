@@ -1,6 +1,7 @@
 class Song < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validate :year_released
+  validates :artist_name, presence: true
 
   private
   def year_released
