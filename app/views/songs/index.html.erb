@@ -10,9 +10,10 @@
         <tr>
             <td>Artist Name</td>
             <td>Title</td>
-             <td>Genre</td>
+            <td>Genre</td>
             <td>Released?</td>
             <td>Year Released?</td>
+            <td>I.D.</td>
         </tr>
     </thead>
     <tbody>        
@@ -23,6 +24,8 @@
         <td><%= song.genre %></td>
         <td><%= song.released ? "Yes" : "No" %></td>
         <td><%= song.release_year %></td>
+        <td><%= song.id %></td>
+        <td><%= link_to "Edit", edit_song_path(song) %></td>
     </tr>
 <% end %>
 </tbody>
