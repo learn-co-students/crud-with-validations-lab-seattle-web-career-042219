@@ -1,9 +1,10 @@
-class SongsController < ApplicationController
+# frozen_string_literal: true
 
+class SongsController < ApplicationController
   def show
-    get_song
+    find_song
   end
-  
+
   def index
     @songs = Song.all
   end
@@ -22,11 +23,11 @@ class SongsController < ApplicationController
   end
 
   def edit
-    get_song
+    find_song
   end
 
   def update
-    get_song
+    find_song
     if @song.update(song_params)
       redirect_to song_path(@song)
     else
@@ -35,14 +36,15 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    get_song
+    find_song
     @song.destroy
+    flash[:notice] = 'Song deleted.'
     redirect_to songs_path
   end
 
   private
 
-  def get_song
+  def find_song
     @song = Song.find(params[:id])
   end
 
