@@ -4,8 +4,15 @@
   <title>CrudWithValidationsLab</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
+<% if flash[:messages] %>
+<% binding.pry %>
+  <% flash[:messages] .each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+    <% end -%>
+<% end -%>
 
 <%= yield %>
 

@@ -15,8 +15,10 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
+      flash[:success] = "Create success"
       redirect_to @song
     else
+      flash[:errors] = "Create Failed"
       render :new
     end
   end
@@ -28,8 +30,10 @@ class SongsController < ApplicationController
   def update
     get_song
     if @song.update(song_params)
+      flash[:success] = "Update success"
       redirect_to song_path(@song)
     else
+      flash[:errors] = "Update failed"
       render :edit
     end
   end
@@ -37,6 +41,7 @@ class SongsController < ApplicationController
   def destroy
     get_song
     @song.destroy
+    flash[:success] = "Delete success"
     redirect_to songs_path
   end
 

@@ -19,3 +19,9 @@
   background-color: red;
   display: table;
 }
+
+.success {
+  padding: 2px;
+  color: green;
+  display: table;
+}

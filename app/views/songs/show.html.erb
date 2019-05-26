@@ -6,4 +6,6 @@
 <% if @song.released %>
     <p>Released in the year: <%=@song.release_year %></p>
 <% end %>
-<%= link_to "Edit", edit_song_path(@song) %>
+<%= link_to "Edit", edit_song_path(@song) %><br>
+
+<%= link_to "Delete", song_path(@song), method: :delete, data: { confirm: 'Are you sure?' } %>

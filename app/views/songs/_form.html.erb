@@ -1,10 +1,10 @@
 <%= form_for @song do |f| %>
-    <% if @song.errors.any? %>
+    <% if @song.errors.messages.any? %>
         <div id="error-explanation">
             <p>Errors: </p>
-            <ul>
-                <%= @song.errors.full_messages do |message| %>
-                    <li><%= message %></li>
+            <ul style = "list-unstyled">
+                <% @song.errors.full_messages.each do |message| %>
+                    <li class="field_with_errors"><%= message %></li>
                 <% end %>    
             </ul>
         </div>
