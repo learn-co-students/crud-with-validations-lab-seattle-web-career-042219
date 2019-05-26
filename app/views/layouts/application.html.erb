@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CrudWithValidationsLab</title>
+  <title>Crud With Validations Lab</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
-<% if flash[:messages] %>
-<% binding.pry %>
-  <% flash[:messages] .each do |name, msg| -%>
+
+<%= link_to "View all Songs", songs_path %><br>
+<%= link_to "New Song", new_song_path %><br>
+<hr>
+<% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
-    <% end -%>
-<% end -%>
+<% end %> 
+<br>
+
 
 <%= yield %>
 

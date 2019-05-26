@@ -1,9 +1,10 @@
-class SongsController < ApplicationController
+# frozen_string_literal: true
 
+class SongsController < ApplicationController
   def show
-    get_song
+    find_song
   end
-  
+
   def index
     @songs = Song.all
   end
@@ -15,31 +16,31 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      flash[:success] = "Create success"
+      flash[:success] = "Song created successfully!"
       redirect_to @song
     else
-      flash[:errors] = "Create Failed"
+      flash[:errors] = "Song create failed"
       render :new
     end
   end
 
   def edit
-    get_song
+    find_song
   end
 
   def update
-    get_song
+    find_song
     if @song.update(song_params)
-      flash[:success] = "Update success"
+      flash[:success] = "Song updated successfully!"
       redirect_to song_path(@song)
     else
-      flash[:errors] = "Update failed"
+      flash[:errors] = "Song update failed"
       render :edit
     end
   end
 
   def destroy
-    get_song
+    find_song
     @song.destroy
     flash[:success] = "Delete success"
     redirect_to songs_path
@@ -47,7 +48,7 @@ class SongsController < ApplicationController
 
   private
 
-  def get_song
+  def find_song
     @song = Song.find(params[:id])
   end
 

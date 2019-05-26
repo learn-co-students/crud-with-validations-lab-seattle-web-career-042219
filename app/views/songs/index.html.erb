@@ -3,8 +3,10 @@
 
 
 <h1>View all Songs</h1>
+<br>
 <%= link_to 'Create Song', new_song_path %>
 <br>
+<br>    
 <table>
     <thead> 
         <tr>
@@ -27,9 +29,8 @@
         <td><%= song.id %></td>
         <td><%= link_to "View", song_path(song) %></td>
         <td><%= link_to "Edit", edit_song_path(song) %></td>
-        <td><%= link_to "Delete", song, method: :delete, data: {confirm: 'Really delete?' } %></td>
+        <td><%= button_to "Delete", song, method: :delete, data: {confirm: 'Really delete?' } %></td>
     </tr>
 <% end %>
 </tbody>
-<%# ? <p>Released</p> : <p>Unreleased</p> %>
 </table>

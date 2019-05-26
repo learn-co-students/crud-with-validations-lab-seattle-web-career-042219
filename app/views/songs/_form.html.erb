@@ -1,14 +1,15 @@
+<% if !@song.errors.full_messages.size.zero? %>
+  <div id="error-explanation">
+     <p><%= pluralize(@song.errors.full_messages.size, 'error') %>: </p>
+      <ul class = "field_with_errors">
+       <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>    
+     </ul>
+   </div>
+ <% end %>
+
 <%= form_for @song do |f| %>
-    <% if @song.errors.messages.any? %>
-        <div id="error-explanation">
-            <p>Errors: </p>
-            <ul style = "list-unstyled">
-                <% @song.errors.full_messages.each do |message| %>
-                    <li class="field_with_errors"><%= message %></li>
-                <% end %>    
-            </ul>
-        </div>
-    <% end %>
 
     <div class="field">
         <%= f.label :title %><br>
