@@ -3,10 +3,12 @@
 class SongsController < ApplicationController
   def show
     find_song
+    flash[:success] =' Viewing a song'
   end
 
   def index
     @songs = Song.all
+    flash[:success] =' Viewing all songs'
   end
 
   def new
