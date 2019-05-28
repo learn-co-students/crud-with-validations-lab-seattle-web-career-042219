@@ -1,0 +1,13 @@
+<h1>Songs#show</h1>
+<p>Find me in app/views/songs/show.html.erb</p>
+<h1>View a Song</h1>
+<h3><%= @song.title %></h3> by <h3><%= @song.artist_name %></h3>
+<p>Genre: <%= @song.genre %></p>
+<% if @song.released %>
+    <p>Released in the year: <%= @song.release_year %></p>
+<% end %>
+
+<%= link_to "Edit", edit_song_path(@song) %><br>
+<%= link_to "Delete", song_path(@song), method: :delete, data: { confirm: 'Are you sure?' } %>
+<input name="_method" type="hidden" value="delete" />
+
