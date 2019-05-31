@@ -28,6 +28,10 @@ ul {
   border: 1px solid red !important;
 }
 
+.field_with_errors textarea {
+  border: 1px solid red !important;
+}
+
 /* The text errors and error messages */
 #error-explanation {
   color: red;
