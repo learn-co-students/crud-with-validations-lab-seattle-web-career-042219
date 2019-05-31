@@ -1,4 +1,5 @@
-<% if !@song.errors.full_messages.size.zero? %>
+<%# if !@song.errors.full_messages.size.zero? %>
+<%if @song.errors.any? %>
   <div id="error-explanation">
      <p><%= pluralize(@song.errors.full_messages.size, 'error') %>: </p>
       <ul class = "field_with_errors">

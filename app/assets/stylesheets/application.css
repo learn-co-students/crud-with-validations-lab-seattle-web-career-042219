@@ -14,26 +14,29 @@
  *= require_self
  */
 
- ul {
+ul {
   list-style-type: none;
 }
 
+/* Label above the input */
 .field_with_errors {
   color: red;
 }
 
+/* around the input field */
 .field_with_errors input {
   border: 1px solid red !important;
 }
 
+/* The text errors and error messages */
 #error-explanation {
-  color:red;
+  color: red;
 }
 
 /* flash */
 
 .errors {
-  color:red;
+  color: red;
 }
 
 .success {
@@ -41,5 +44,3 @@
   color: green;
   display: table;
 }
-
-

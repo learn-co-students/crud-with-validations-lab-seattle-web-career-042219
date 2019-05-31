@@ -1,5 +1,6 @@
 <h1>Songs#edit</h1>
 <p>Find me in app/views/songs/edit.html.erb</p>
-<h3>Editing <%= @song.title %> by <%= @song.artist_name %>
-<%= render 'form' %>
-<%= link_to "Cancel Edit", @song %>
+<h3>
+  Editing <%= @song.title %> by <%= @song.artist_name %> <%= render 'form' %>
+  <%= link_to "Cancel Edit", @song %>
+</h3>
